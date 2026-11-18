@@ -1,0 +1,108 @@
+========================================================================
+DRESS POINT BASIC - CODE EXPLANATION GUIDE
+========================================================================
+This guide explains what each PHP file does in simple terms so you can easily
+explain the project during your presentation or viva.
+
+------------------------------------------------------------------------
+CUSTOMER SIDE FILES (Root Folder)
+------------------------------------------------------------------------
+
+1. config.php
+Connects the website to the MySQL database (dresspoint_basic_db) using the mysqli
+extension and defines useful helper functions like formatting prices and counting cart items.
+
+2. header.php
+Contains the top navigation bar, store logo, category dropdown menu, and shopping
+bag counter that appear at the top of every customer page.
+
+3. footer.php
+Contains store contact details, opening hours, department links, and copyright
+information shown at the bottom of every customer page.
+
+4. index.php
+The main homepage of the store featuring promotional banners, category cards,
+and highlighted featured products.
+
+5. shop.php
+Displays clothing products retrieved from the database filtered cleanly by category
+without complicated search inputs, filters, or sorting.
+
+6. product.php
+Shows a single product's full details (photo, price, description, and available sizes)
+and allows the customer to choose their size and add it to their shopping bag.
+
+7. cart.php
+Displays all items currently in the customer's session bag with buttons to increase
+or decrease quantities, remove items, and view the total order cost.
+
+8. cart_action.php
+A background script that processes cart actions (Add to Bag, Update Quantity,
+Remove Item, Clear Bag) inside PHP's $_SESSION array.
+
+9. checkout.php
+A simple checkout form where customers enter their Name, Phone, and Delivery Address,
+which then saves the order and order items directly to the database with Cash on Delivery.
+
+10. contact.php
+A customer service form that allows visitors to type their questions, saving the message
+into the database messages table using a safe prepared statement.
+
+
+------------------------------------------------------------------------
+ADMIN SIDE FILES (admin/ Folder)
+------------------------------------------------------------------------
+
+11. admin/auth_check.php
+A security guard file included at the top of every admin page to ensure only logged-in
+administrators can view the admin portal.
+
+12. admin/login.php
+The administrator login page that verifies passwords securely using PHP's built-in
+password_verify() function against hashed passwords.
+
+13. admin/logout.php
+Ends the admin session, clears login credentials from memory, and redirects back
+to the login screen.
+
+14. admin/header.php
+Contains the administrative sidebar menu (Dashboard, Products, Orders, Messages)
+and top bar used across the admin portal.
+
+15. admin/footer.php
+Closes the administrative page layout and provides bottom portal credits.
+
+16. admin/index.php
+The simple dashboard page that calculates and displays only three key numbers:
+Total Products, Total Orders, and Total Customer Messages.
+
+17. admin/products.php
+The complete product management page (CRUD) where admins can add new clothes with image
+uploads, view existing items, edit names/prices/sizes, and delete items.
+
+18. admin/orders.php
+Displays customer orders with names, phone numbers, delivery addresses, and purchased items,
+allowing the admin to update order status (Pending, Processing, Shipped, Delivered).
+
+19. admin/messages.php
+Displays customer inquiries submitted from the contact form and allows the admin
+to read or delete them using mysqli prepared statements.
+
+
+------------------------------------------------------------------------
+DATABASE SCRIPT
+------------------------------------------------------------------------
+
+20. database.sql
+Contains the MySQL structure and sample records for dresspoint_basic_db, including
+the 6 essential tables: admins, categories, products, orders, order_items, and messages.
+Ready to import in phpMyAdmin.
+
+========================================================================
+ADMIN ACCESS DETAILS
+========================================================================
+- Link: http://localhost/dresspoint_basic/admin/login.php
+- Username: admin
+- Password: admin123
+========================================================================
+
